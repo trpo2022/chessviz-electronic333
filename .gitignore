@@ -1,0 +1,5 @@
+# IDE,.. directories
+./.*/
+
+# Assembly files
+*.0
