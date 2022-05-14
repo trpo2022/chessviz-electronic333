@@ -4,3 +4,5 @@
 
 # Assembly files
 *.0
+*.a
+*.d
