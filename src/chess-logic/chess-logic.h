@@ -20,6 +20,10 @@
 #define BLACK_KING 'k' // Короли
 #define WHITE_KING 'K'
 
+// Игроки
+#define PLAYER_WHITE 0
+#define PLAYER_BLACK 1
+
 // Шахматная доска - массив из 64 символов, где
 // ' ' - пустое место,
 // 'p' - чёрная пешка,
