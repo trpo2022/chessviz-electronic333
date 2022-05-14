@@ -26,7 +26,7 @@
 // 'P' - белая пешка,
 // 'b' - чёрный слон,
 // ...
-typedef char* chess_board;
+typedef char chess_board[BOARD_WIDTH * BOARD_HEIGTH];
 typedef char piece;
 
 piece get_at (chess_board, int, int); // Возвращает фигуру по координатам
