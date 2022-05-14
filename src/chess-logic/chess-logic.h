@@ -35,6 +35,7 @@
 typedef char chess_board[BOARD_WIDTH][BOARD_HEIGTH];
 typedef char piece;
 
-piece get_at (chess_board, int, int); // Возвращает фигуру по координатам
-void set_at (chess_board, int, int, piece); // Устанавливает фигуру по координатам
 // Где int, int in [0 to BOARD_HEIGTH], [0 to BOARD_WIDTH]
+piece get_at (chess_board, int, int); // Возвращает фигуру по координатам
+void put_at (chess_board, int, int, piece); // Устанавливает фигуру по координатам
+void remove_at (chess_board, int, int); // Удаляем фигуру
