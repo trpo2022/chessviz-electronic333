@@ -30,12 +30,6 @@
 #define PLAYER_WHITE 0
 #define PLAYER_BLACK 1
 
-// Шахматная доска - массив из 64 символов, где
-// ' ' - пустое место,
-// 'p' - чёрная пешка,
-// 'P' - белая пешка,
-// 'b' - чёрный слон,
-// ...
 typedef char chess_board[BOARD_HEIGTH][BOARD_WIDTH];
 typedef char piece;
 
