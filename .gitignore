@@ -1,7 +1,6 @@
 # IDE,.. directories
 ./.*/
 .vscode
-.keep
 
 # Assembly files
 *.0
