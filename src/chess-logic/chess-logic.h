@@ -22,6 +22,10 @@
 
 #define EMPTY_FIELD ' ' // Пустая клетка на доске
 
+// Возвращается при ошибке
+// Например, get_at возращает # если неверно задана позиция
+#define ERROR_PIECE '#'
+
 // Игроки
 #define PLAYER_WHITE 0
 #define PLAYER_BLACK 1
@@ -32,10 +36,12 @@
 // 'P' - белая пешка,
 // 'b' - чёрный слон,
 // ...
-typedef char chess_board[BOARD_WIDTH][BOARD_HEIGTH];
+typedef char chess_board[BOARD_HEIGTH][BOARD_WIDTH];
 typedef char piece;
 
 // Где int, int in [0 to BOARD_HEIGTH], [0 to BOARD_WIDTH]
 piece get_at (chess_board, int, int); // Возвращает фигуру по координатам
 void put_at (chess_board, int, int, piece); // Устанавливает фигуру по координатам
 void remove_at (chess_board, int, int); // Удаляем фигуру
+
+void move (chess_board, int, int, int, int); // Делаем ход

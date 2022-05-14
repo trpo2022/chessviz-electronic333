@@ -1,2 +1,44 @@
+#include <chess-logic.h>
 
+// Правильно ли задана фигура
+int is_valid_piece (piece p) {
+  return p == BLACK_BISHOP ||
+         p == WHITE_BISHOP ||
+         p == BLACK_KING ||
+         p == WHITE_KING ||
+         p == BLACK_KNIGHT ||
+         p == WHITE_KNIGTH ||
+         p == BLACK_PAWN ||
+         p == WHITE_PAWN ||
+         p == BLACK_QUEEN ||
+         p == WHITE_QUEEN ||
+         p == BLACK_ROOK ||
+         p == WHITE_ROOK ||
+         p == EMPTY_FIELD;
+}
 
+// Лежат ли индексы строки и столбца в пределах доски
+int check_row_col (int row, int col) {
+  return row >= 0 && row < BOARD_HEIGTH && col >= 0 && col < BOARD_WIDTH;
+}
+
+piece get_at (chess_board board, int row, int col) {
+  if (check_row_col(row, col)) {
+    return board[row][col];
+  }
+  else {
+    return ERROR_PIECE;
+  }
+}
+
+void put_at (chess_board board, int row, int col, piece piece) {
+  if (check_row_col(row, col) && is_valid_piece(piece)) {
+    board[row][col] = piece;
+  }
+}
+
+void remove_at (chess_board board, int row, int col) {
+  if (check_row_col(row, col)) {
+    board[row][col] = EMPTY_FIELD;
+  }
+}
