@@ -20,6 +20,8 @@
 #define BLACK_KING 'k' // Короли
 #define WHITE_KING 'K'
 
+#define EMPTY_FIELD ' ' // Пустая клетка на доске
+
 // Игроки
 #define PLAYER_WHITE 0
 #define PLAYER_BLACK 1
