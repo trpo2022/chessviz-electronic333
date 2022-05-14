@@ -42,3 +42,11 @@ void remove_at (chess_board board, int row, int col) {
     board[row][col] = EMPTY_FIELD;
   }
 }
+
+void move (chess_board board, int r1, int c1, int r2, int c2) {
+  if (check_row_col(r1, c1) && check_row_col(r2, c2)) {
+    piece p = get_at(board, r1, c1);
+    remove_at(board, r1, c1);
+    put_at(board, r2, c2, p);
+  }
+}
