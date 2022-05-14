@@ -1,0 +1,8 @@
+# IDE,.. directories
+./.*/
+.vscode
+
+# Assembly files
+*.0
+*.a
+*.d
