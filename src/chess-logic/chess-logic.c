@@ -18,12 +18,16 @@ int is_valid_piece (piece p) {
 }
 
 // Лежат ли индексы строки и столбца в пределах доски
-int check_row_col (int row, int col) {
-  return row >= 0 && row < BOARD_HEIGTH && col >= 0 && col < BOARD_WIDTH;
+int check_row_col (int row) {
+  return row >= 0 && row < BOARD_HEIGTH;
+}
+
+int check_col (int col) {
+  return col >= 0 && col < BOARD_WIDTH;
 }
 
 piece get_at (chess_board board, int row, int col) {
-  if (check_row_col(row, col)) {
+  if (check_row(row) && check_col(col)) {
     return board[row][col];
   }
   else {
@@ -32,19 +36,19 @@ piece get_at (chess_board board, int row, int col) {
 }
 
 void put_at (chess_board board, int row, int col, piece piece) {
-  if (check_row_col(row, col) && is_valid_piece(piece)) {
+  if (check_row(row) && check_col(col) && is_valid_piece(piece)) {
     board[row][col] = piece;
   }
 }
 
 void remove_at (chess_board board, int row, int col) {
-  if (check_row_col(row, col)) {
+  if (check_row(row) && check_col(col)) {
     board[row][col] = EMPTY_FIELD;
   }
 }
 
 void move (chess_board board, int r1, int c1, int r2, int c2) {
-  if (check_row_col(r1, c1) && check_row_col(r2, c2)) {
+  if (check_row(r1) && check_col(c1) && check_row(r2) && check_col(c2)) {
     piece p = get_at(board, r1, c1);
     remove_at(board, r1, c1);
     put_at(board, r2, c2, p);
