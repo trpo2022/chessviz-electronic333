@@ -1,5 +1,6 @@
-APP_NAME = hello
-LIB_NAME = libhello
+APP_NAME = main
+LIB_NAME = ctest-1.0.0
+LIB_NAME = chess-logic
 
 CFLAGS = -Wall -Wextra -Werror
 CPPFLAGS = -I src -MP -MMD
